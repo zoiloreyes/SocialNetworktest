@@ -3,9 +3,12 @@
 <head>
 	<title>Bienvenido</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.min.css" />
-	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-	 <style>
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" /> 
+    <link href="mdb.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto'); 
+        @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 	 	.bg {
 	 		background: url('Shark-Gif.gif') no-repeat center center;
 	 		position: fixed;
@@ -18,7 +21,7 @@
 
 	 	.jumbotron {
 	 		height:  500px;
-	 		color: white;
+	 		color: white;	
 	 		text-shadow: #444 0 1px 1px;
 	 		background:transparent;
 	 	}
@@ -63,92 +66,286 @@
 	 	}
 		.form-body{
 			padding: 10px;
-			background-color: rgb(239, 239, 239);
+			background-color:  white;
 		}
-		li.nav-item.active{
-			background-color: red;
+         li.nav-item.active {
+             background-color: #0088cb;
+         }
+         li.nav-item.active a{
+             color: white;
+         }
+        a.nav-link.active {
+            background-color: #0088cb;
+            color: white;
+        }
+		.tab-pane.active{
+			padding: 5px;
+			background-color: white;
 		}
+         .blue-row {
+             background-color: #0088cb;
+         }
+        .modal-body {
+            height: 400px;
+            overflow-y: auto;
+        }
+        .slabo {
+            font-family: 'Slabo 27px', serif;
+        }
+        .roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+        .navbarimg{
+            max-height: 30px;
+            max-width: 30px;
+        }
+        .dropdown-toggle::after {
+            display: none
+        }
 	 </style>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" style="display: none;"role="navigation">
-		<div class="container">
-			<a class="navbar-brand" href="#">Title</a>
-			<ul class="nav navbar-nav">
-				<li class="active">
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#">Link</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+    <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded" style="opacity: 0">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"><i class="fa fa-eye"> Meet</i></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline">
+                <div class="input-group mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Buscar Personas">
+                </div>
+
+            </form>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Muro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Chat</a>
+                </li>
+                
+            </ul>
+            <ul class="navbar-nav mr-0">
+                <li class="nav-item dropdown mr-auto">
+                    <a class="nav-link dropdown-toggle" id="navLinkAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="img-fluid navbarimg" src="testProfile.jpg" />
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
 	<header>
 		<div class="header-content">
 			<div class="header-content-inner">
 				<h1 id="homeHeading">Unete</h1>
 				<hr style="background-color: white">
 				<p>Encuentra personas nuevas, comunicate con tus amigos, Comparte tus experiencias</p>
-				<a href="#about" class="btn btn-primary rounded-circle"><i class="fa fa-angle-double-down"></i></a>
+				<button data-scrl="#registerRow" class="btn btn-primary rounded-circle scroll-btn"><i class="fa fa-angle-double-down"></i></button>
 			</div>
 		</div>
 	</header>
-	<div class="container mt-2">
-		<div class="row">
-			<div class="col-sm-4 offset-sm-4">
-				<div class="form-body">
-					<ul class="nav nav-tabs">
-						<li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" href="#loginSection">Inicia Sesion</a></li>
-						<li class="nav-item active"><a class="nav-link" data-toggle="tab" role="tab" href="#RegisterSection">Registrate</a></li>
-					</ul>
-					<div class="tab-content">
-						<div class="tab-pane active fade show active" id="RegisterSection" role="tabpanel">
-							<form method="post">
-								<div class="form-group">
-									<label for="txtemail">Correo</label>
-									<input type="email" class="form-control" id="txtemail" placeholder="Correo">
-								</div>
-								 <label>Correo</label>
-								<input type="text" name="username">
-								<label>Password</label>
-								<input type="password" name="password">
-								<button type="submit">Sign In</button>
-								<a href="">Forgot Password?</a>
-							</form>
-						</div>
-						<div class="tab-pane active fade" id="loginSection" role="tabpanel">
-							<form method="post">
-								<div class="form-group">
-									<label for="txtemail">Correo</label>
-									<input type="email" class="form-control" id="txtemail" placeholder="Correo">
-								</div>
-								 <label>Correo</label>
-								<input type="text" name="username">
-								<label>Password</label>
-								<input type="password" name="password">
-								<button type="submit">Sign In</button>
-								<a href="">Forgot Password?</a>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<div class="container-fluid">
+        <div class="row pt-5">
+            <div class="col-sm-12">
+                <h1 class="text-center slabo">
+                    Una red social para todos
+                </h1>
+            </div>
+            
+            
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-5 offset-sm-1">
+                <img class="img-fluid" src="chat.png" alt="Chania">
+             
+            </div>
+            <div class="col-sm-5">
+                <h4 class="text-center slabo">Chatea</h4>
+                <h5 class="text-justify roboto">En Eyemeet podras chatear con tus amigos y conocidos facilmente, Nuestro sistema de chat soporta imagenes y videos para convertir tus conversaciones en una experiencia.</h5> 
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-5 offset-sm-1">
+                <h4 class="text-center slabo">Encuentra</h4>
+                <h5 class="text-justify roboto">Puedes buscar a tus amigos o encontrar nuevos amigos facilmente nuestro sistema de busqueda, descubre nuevas personas y hazlos parte de tu vida .</h5>
+            </div>
+            <div class="col-sm-5 offset-sm-1">
+                <img class="img-fluid" src="seek.png" alt="Chania">
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            </div>
+            
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-4 offset-sm-1">
+                <img class="img-fluid" src="img.png" alt="Chania">
+
+            </div>
+            <div class="col-sm-5 offset-sm-1">
+                <h4 class="text-center slabo">Comparte</h4>
+                <h5 class="text-justify roboto">Pudes publicar mensajes, imagenes, videos y enlaces en tu muro de eyemeet, Comparte tus experiencias con todos tus amigos, mantenlos actualizados. </h5>
+            </div>
+        </div>
+        <div class="row blue-row py-5" id="registerRow">
+            <div class="col-sm-4 offset-sm-4">
+                <div class="form-body">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item mr-1 rounded-top active"><a class="nav-link" data-toggle="tab" role="tab" href="#loginSection">Inicia Sesion</a></li>
+                        <li class="nav-item mx-1 rounded-top"><a class="nav-link" data-toggle="tab" role="tab" href="#RegisterSection">Registrate</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="loginSection" role="tabpanel">
+                            <form method="post">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="txtemail" placeholder="Correo">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="txtpassword" placeholder="Contrasena">
+                                </div>
+                                <div class="form-group row">
+                                    <div class=" col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Inicia Sesion</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class=" col-sm-10">
+                                        <a href="#">Olvidaste la contrasena?</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade show" id="RegisterSection" role="tabpanel">
+                            <form method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="txtnombre" placeholder="Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="txtapellido" placeholder="Apellido">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="txtemail" placeholder="Correo">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="txtpassword" placeholder="Contrasena">
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="dtNacimiento" placeholder="Fecha de nacimiento">
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" id="chkTerminos">
+                                        Acepto los <a href="#" data-toggle="modal" data-target="#terminos">Terminos y condiciones</a>
+                                    </label>
+                                </div>
+                                <div class="form-group row">
+                                    <div class=" col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Registrate</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+	</div>
+    <div class="modal fade" id="terminos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="terminostitle">Terminos y Condiciones</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2>TERMINOS Y CONDICIONES</h2>
+                    <ol>
+                        <li>
+                            <p><strong>1. Introducci&oacute;n</strong></p>
+                            <p>Las presentes condiciones generales de uso de la p&aacute;gina web, regulan los t&eacute;rminos y condiciones de acceso y uso de eyeMeet, propiedad de (indicar el nombre de la empresa o profesional propietario de el portal), con domicilio en (indicar) y con C&oacute;digo de Identificaci&oacute;n Fiscal n&uacute;mero (indicar), en adelante, &laquo;la Empresa&raquo;, que el usuario del Portal deber&aacute; de leer y aceptar para usar todos los servicios e informaci&oacute;n que se facilitan desde el portal.&nbsp;El mero acceso y/o utilizaci&oacute;n del portal, de todos o parte de sus contenidos y/o servicios significa la plena aceptaci&oacute;n de las presentes condiciones generales de uso.&nbsp;</p>
+                            <p><strong>2. Condiciones de uso</strong></p>
+                            <p>Las presentes condiciones generales de uso del portal regulan el acceso y la utilizaci&oacute;n del portal, incluyendo los contenidos y los servicios puestos a disposici&oacute;n de los usuarios en y/o a trav&eacute;s del portal, bien por el portal, bien por sus usuarios, bien por terceros. No obstante, el acceso y la utilizaci&oacute;n de ciertos contenidos y/o servicios puede encontrarse sometido a determinadas condiciones espec&iacute;ficas.</p>
+                            <p><strong>3.&nbsp;&nbsp; Modificaciones</strong></p>
+                            <p>La empresa se reserva la facultad de modificar en cualquier momento las condiciones generales de uso del portal. En todo caso, se recomienda que consulte peri&oacute;dicamente los presentes&nbsp;t&eacute;rminos de uso del portal, ya que pueden ser modificados.</p>
+                            <p><strong>4. Obligaciones del Usuario</strong></p>
+                            <p>El usuario deber&aacute; respetar en todo momento los t&eacute;rminos y condiciones establecidos en las presentes condiciones generales de uso del portal. De forma expresa el usuario manifiesta que utilizar&aacute; el portal de forma diligente y asumiendo cualquier responsabilidad que pudiera derivarse del incumplimiento de las normas.</p>
+                            <p>As&iacute; mismo, el usuario no podr&aacute; utilizar el portal para transmitir, almacenar, divulgar promover o distribuir datos o contenidos que sean portadores de virus o cualquier otro c&oacute;digo inform&aacute;tico, archivos o programas dise&ntilde;ados para interrumpir, destruir o perjudicar el funcionamiento de cualquier programa o equipo inform&aacute;tico o de telecomunicaciones.</p>
+                            <p><strong>5. Responsabilidad del portal</strong></p>
+                            <p>El usuario conoce y acepta que el portal no otorga ninguna garant&iacute;a de cualquier naturaleza, ya sea expresa o impl&iacute;cita, sobre los datos, contenidos, informaci&oacute;n y servicios que se incorporan y ofrecen desde el Portal.</p>
+                            <p>Exceptuando los casos que la Ley imponga expresamente lo contrario, y exclusivamente con la medida y extensi&oacute;n en que lo imponga, el Portal no garantiza ni asume responsabilidad alguna respecto a los posibles da&ntilde;os y perjuicios causados por el uso y utilizaci&oacute;n de la informaci&oacute;n, datos y servicios del Portal.</p>
+                            <p>En todo caso, el Portal excluye cualquier responsabilidad por los da&ntilde;os y perjuicios que puedan deberse a la informaci&oacute;n y/o servicios prestados o suministrados por terceros diferentes de la Empresa. Toda responsabilidad ser&aacute; del tercero ya sea proveedor o&nbsp;colaborador.</p>
+                            <p><strong>6. Propiedad intelectual e industrial</strong></p>
+                            <p>Todos los contenidos, marcas, logos, dibujos, documentaci&oacute;n, programas inform&aacute;ticos o cualquier otro elemento susceptible de protecci&oacute;n por la legislaci&oacute;n de propiedad intelectual o industrial, que sean accesibles en el portal corresponden exclusivamente a la empresa o a sus leg&iacute;timos titulares y quedan expresamente reservados todos los derechos sobre los mismos. Queda expresamente prohibida la creaci&oacute;n de enlaces de hipertexto (links) a cualquier elemento integrante de las p&aacute;ginas web del Portal sin la autorizaci&oacute;n de la empresa, siempre que no sean a una p&aacute;gina web del Portal que no requiera identificaci&oacute;n o autenticaci&oacute;n para su acceso, o el mismo est&eacute; restringido.</p>
+                            <p>En cualquier caso, el portal se reserva todos los derechos sobre los contenidos, informaci&oacute;n datos y servicios que ostente sobre los mismos. El portal no concede ninguna licencia o autorizaci&oacute;n de uso al usuario sobre sus contenidos, datos o servicios, distinta de la que expresamente se detalle en las presentes condiciones generales de uso del portal.</p>
+                            <p><strong>7. Legislaci&oacute;n aplicable, jurisdicci&oacute;n competente y notificaciones</strong></p>
+                            <p>Las presentes condiciones se rigen y se interpretan de acuerdo con las Leyes de Espa&ntilde;a. Para cualquier reclamaci&oacute;n ser&aacute;n competentes los juzgados y tribunales de (indicar la ciudad). Todas las notificaciones, requerimientos, peticiones y otras comunicaciones que el Usuario desee efectuar a la Empresa titular del Portal deber&aacute;n realizarse por escrito y se entender&aacute; que han sido correctamente realizadas cuando hayan sido recibidas en la siguiente direcci&oacute;n (indicar direcci&oacute;n de correo en la que se desean recibir las notificaciones).</p>
+                        </li>
+                    </ol>    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <hr />
+            <p>EyeMeet.com © 2017</p>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="mdb.js"></script>
 <script>
 	window.addEventListener("scroll", function() {
     if (window.scrollY > 1) {
-        $('.navbar').fadeIn();
+        $('.navbar').addClass("animated fadeIn");
+        $('.navbar').removeClass(" fadeOut");
     }
     else {
-        $('.navbar').fadeOut();
-    }
-},false);
+        $('.navbar').addClass("animated fadeOut");
+        $('.navbar').removeClass(" fadeIn");
+        }
+
+    
+    }, false);
+    $(document).ready(function () {
+        $(".nav-link").click(function () {
+            var tab = $(this).attr("href");
+            $(tab).addClass('animated fadeIn')
+            setTimeout(
+                function () {
+                    $(tab).removeClass("animated fadeIn");
+                }, 1000);
+            
+        });
+        $(".scroll-btn").click(function () {
+            var objective = $(this).data("scrl");
+            console.log(objective);
+            $('html, body').animate({
+                scrollTop: $(objective).offset().top
+            }, 1000);
+        });
+    });
 </script>
 </html>
