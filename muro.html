@@ -194,16 +194,16 @@
             bottom: 0px;
             right: 220px;
             height: 285px;
-            background-color: rgb(237, 239, 244);
+            background-color: white;
             width: 300px;
             border: 1px solid rgba(29, 49, 91, .3);
         }
 
             .popup-box .popup-head {
-                background-color: #6d84b4;
+                background-color: #0088cb;
                 padding: 5px;
                 color: white;
-                font-weight: bold;
+                font-family: 'Roboto', sans-serif;
                 font-size: 14px;
                 clear: both;
             }
@@ -215,7 +215,7 @@
                 .popup-box .popup-head .popup-head-right {
                     float: right;
                     opacity: 0.5;
-                }
+                }   
 
                     .popup-box .popup-head .popup-head-right a {
                         text-decoration: none;
@@ -223,8 +223,18 @@
                     }
 
             .popup-box .popup-messages {
-                height: 100%;
+                top: 0;
+                height: 75%;
                 overflow-y: scroll;
+            }
+
+            .popup-box .popup-form {
+                height: 15%;
+                padding-right: 6px;
+                padding-left: 1px;
+                border-top: 1px solid gray;
+                margin-bottom: 10px;
+                top: 0;
             }
         .ellipsis {
             display: inline-block;
@@ -232,6 +242,15 @@
             white-space: nowrap;
             overflow: hidden !important;
             text-overflow: ellipsis;
+        }
+
+        input[type=search] {
+            width: 90%;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 0;
+        }
+        input[type=search]:focus {
+            border-radius: 0;
         }
         /*Facebook SideChat End*/
     </style>
@@ -542,7 +561,7 @@
         element = element + '<div class="popup-head">';
         element = element + '<div class="popup-head-left">' + name + '</div>';
         element = element + '<div class="popup-head-right"><a href="javascript:close_popup(\'' + id + '\');">&#10005;</a></div>';
-        element = element + '<div style="clear: both"></div></div><div class="popup-messages"></div></div>';
+        element = element + '<div style="clear: both"></div></div><div class="popup-messages"><p></p></div><div class="popup-form"><input type="search" placeholder="Mensaje..."></input><button type="button" class="btn btn-info"><i></i></button></div></div>';
 
         document.getElementsByTagName("body")[0].innerHTML = document.getElementsByTagName("body")[0].innerHTML + element;
 
