@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bienvenido</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.min.css" />
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+	 <style>
+	 	.bg {
+	 		background: url('Shark-Gif.gif') no-repeat center center;
+	 		position: fixed;
+	 		width: 100%;
+	 		min-height: auto;
+	 		top:0;
+	 		left:0;
+	 		z-index: -1;
+	 	}
+
+	 	.jumbotron {
+	 		height:  500px;
+	 		color: white;
+	 		text-shadow: #444 0 1px 1px;
+	 		background:transparent;
+	 	}
+	 	#welcomeMsg{
+	 		margin-top: 200px;
+	 	}
+
+	 	header {
+	 		position: relative;
+	 		width: 100%;
+	 		min-height: 100%;
+	 		-webkit-background-size: cover;
+	 		-moz-background-size: cover;
+	 		background-size: cover;
+	 		-o-background-size: cover;
+	 		background-position: center;
+	 		background-image: url('Shark-Gif.gif');
+	 		text-align: center;
+	 		color: white;
+	 	}
+	 	header .header-content {
+	 		position: relative;
+	 		text-align: center;
+	 		padding: 100px 15px 100px;
+	 		width: 100%;
+	 	}
+	 	header .header-content .header-content-inner h1 {
+	 		font-weight: 700;
+	 		text-transform: uppercase;
+	 		margin-top: 0;
+	 		margin-bottom: 0;
+	 		font-size: 30px;
+	 	}
+	 	header .header-content .header-content-inner hr {
+	 		margin: 30px auto;
+	 	}
+	 	header .header-content .header-content-inner p {
+	 		font-weight: 300;
+	 		color: rgba(255, 255, 255, 0.7);
+	 		font-size: 16px;
+	 		margin-bottom: 50px;
+	 	}
+		.form-body{
+			padding: 10px;
+			background-color: rgb(239, 239, 239);
+		}
+		li.nav-item.active{
+			background-color: red;
+		}
+	 </style>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" style="display: none;"role="navigation">
+		<div class="container">
+			<a class="navbar-brand" href="#">Title</a>
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Link</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<header>
+		<div class="header-content">
+			<div class="header-content-inner">
+				<h1 id="homeHeading">Unete</h1>
+				<hr style="background-color: white">
+				<p>Encuentra personas nuevas, comunicate con tus amigos, Comparte tus experiencias</p>
+				<a href="#about" class="btn btn-primary rounded-circle"><i class="fa fa-angle-double-down"></i></a>
+			</div>
+		</div>
+	</header>
+	<div class="container mt-2">
+		<div class="row">
+			<div class="col-sm-4 offset-sm-4">
+				<div class="form-body">
+					<ul class="nav nav-tabs">
+						<li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" href="#loginSection">Inicia Sesion</a></li>
+						<li class="nav-item active"><a class="nav-link" data-toggle="tab" role="tab" href="#RegisterSection">Registrate</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active fade show active" id="RegisterSection" role="tabpanel">
+							<form method="post">
+								<div class="form-group">
+									<label for="txtemail">Correo</label>
+									<input type="email" class="form-control" id="txtemail" placeholder="Correo">
+								</div>
+								 <label>Correo</label>
+								<input type="text" name="username">
+								<label>Password</label>
+								<input type="password" name="password">
+								<button type="submit">Sign In</button>
+								<a href="">Forgot Password?</a>
+							</form>
+						</div>
+						<div class="tab-pane active fade" id="loginSection" role="tabpanel">
+							<form method="post">
+								<div class="form-group">
+									<label for="txtemail">Correo</label>
+									<input type="email" class="form-control" id="txtemail" placeholder="Correo">
+								</div>
+								 <label>Correo</label>
+								<input type="text" name="username">
+								<label>Password</label>
+								<input type="password" name="password">
+								<button type="submit">Sign In</button>
+								<a href="">Forgot Password?</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+	window.addEventListener("scroll", function() {
+    if (window.scrollY > 1) {
+        $('.navbar').fadeIn();
+    }
+    else {
+        $('.navbar').fadeOut();
+    }
+},false);
+</script>
+</html>
