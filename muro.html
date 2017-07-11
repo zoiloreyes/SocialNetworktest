@@ -119,10 +119,121 @@
         .dropdown-toggle::after {
             display: none
         }
+        /*Facebook SideChat*/
+        @media only screen and (max-width : 540px) {
+            .chat-sidebar {
+                display: none !important;
+            }
+
+            .chat-popup {
+                display: none !important;
+            }
+        }
+
+        .chat-sidebar {
+            width: 220px;
+            position: fixed;
+            height: 80%;
+            right: 0px;
+            bottom: 10%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: 1px solid rgba(29, 49, 91, .3);
+            background-color: white;
+            overflow-y: scroll;
+        }
+        .chat-sidebar-search {
+            width: 220px;
+            position: fixed;
+            height: 10%;
+            right: 0px;
+            bottom: 0px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border: 1px solid rgba(29, 49, 91, .3);
+            background-color: white;
+
+        }
+        .sidebar-name {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+
+            .sidebar-name span {
+                padding-left: 5px;
+            }
+
+            .sidebar-name a {
+                display: block;
+                height: 100%;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .sidebar-name:hover {
+                background-color: #e1e2e5;
+            }
+
+            .sidebar-name img {
+                width: 32px;
+                height: 32px;
+                vertical-align: middle;
+            }
+
+        .popup-box {
+            display: none;
+            position: fixed;
+            bottom: 0px;
+            right: 220px;
+            height: 285px;
+            background-color: rgb(237, 239, 244);
+            width: 300px;
+            border: 1px solid rgba(29, 49, 91, .3);
+        }
+
+            .popup-box .popup-head {
+                background-color: #6d84b4;
+                padding: 5px;
+                color: white;
+                font-weight: bold;
+                font-size: 14px;
+                clear: both;
+            }
+
+                .popup-box .popup-head .popup-head-left {
+                    float: left;
+                }
+
+                .popup-box .popup-head .popup-head-right {
+                    float: right;
+                    opacity: 0.5;
+                }
+
+                    .popup-box .popup-head .popup-head-right a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
+
+            .popup-box .popup-messages {
+                height: 100%;
+                overflow-y: scroll;
+            }
+        .ellipsis {
+            display: inline-block;
+            width: 120px;
+            white-space: nowrap;
+            overflow: hidden !important;
+            text-overflow: ellipsis;
+        }
+        /*Facebook SideChat End*/
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded" style="opacity: 0">
+    <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -163,168 +274,160 @@
 
         </div>
     </nav>
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">Unete</h1>
-                <hr style="background-color: white">
-                <p>Encuentra personas nuevas, comunicate con tus amigos, Comparte tus experiencias</p>
-                <button data-scrl="#registerRow" class="btn btn-primary rounded-circle scroll-btn"><i class="fa fa-angle-double-down"></i></button>
-            </div>
+    <div class="chat-sidebar">
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('1', '1');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Prueba No.34</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
         </div>
-    </header>
-    <div class="container-fluid">
-        <div class="row pt-5">
-            <div class="col-sm-12">
-                <h1 class="text-center slabo">
-                    Una red social para todos
-                </h1>
-            </div>
-
-
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('2', '2');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
         </div>
-        <div class="row my-5">
-            <div class="col-sm-5 offset-sm-1">
-                <img class="img-fluid" src="chat.png" alt="Chania">
-
-            </div>
-            <div class="col-sm-5">
-                <h4 class="text-center slabo">Chatea</h4>
-                <h5 class="text-justify roboto">En Eyemeet podras chatear con tus amigos y conocidos facilmente, Nuestro sistema de chat soporta imagenes y videos para convertir tus conversaciones en una experiencia.</h5>
-            </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('3', '3');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
         </div>
-        <div class="row my-5">
-            <div class="col-sm-5 offset-sm-1">
-                <h4 class="text-center slabo">Encuentra</h4>
-                <h5 class="text-justify roboto">Puedes buscar a tus amigos o encontrar nuevos amigos facilmente nuestro sistema de busqueda, descubre nuevas personas y hazlos parte de tu vida .</h5>
-            </div>
-            <div class="col-sm-5 offset-sm-1">
-                <img class="img-fluid" src="seek.png" alt="Chania">
-
-            </div>
-
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('4', '4');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
         </div>
-        <div class="row my-5">
-            <div class="col-sm-4 offset-sm-1">
-                <img class="img-fluid" src="img.png" alt="Chania">
-
-            </div>
-            <div class="col-sm-5 offset-sm-1">
-                <h4 class="text-center slabo">Comparte</h4>
-                <h5 class="text-justify roboto">Pudes publicar mensajes, imagenes, videos y enlaces en tu muro de eyemeet, Comparte tus experiencias con todos tus amigos, mantenlos actualizados. </h5>
-            </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('5', '5');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
         </div>
-        <div class="row blue-row py-5" id="registerRow">
-            <div class="col-sm-4 offset-sm-4">
-                <div class="form-body">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item mr-1 rounded-top active"><a class="nav-link" data-toggle="tab" role="tab" href="#loginSection">Inicia Sesion</a></li>
-                        <li class="nav-item mx-1 rounded-top"><a class="nav-link" data-toggle="tab" role="tab" href="#RegisterSection">Registrate</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="loginSection" role="tabpanel">
-                            <form method="post">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="txtemail" placeholder="Correo">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="txtpassword" placeholder="Contrasena">
-                                </div>
-                                <div class="form-group row">
-                                    <div class=" col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Inicia Sesion</button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class=" col-sm-10">
-                                        <a href="#">Olvidaste la contrasena?</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade show" id="RegisterSection" role="tabpanel">
-                            <form method="post">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="txtnombre" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="txtapellido" placeholder="Apellido">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="txtemail" placeholder="Correo">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="txtpassword" placeholder="Contrasena">
-                                </div>
-                                <div class="form-group">
-                                    <input type="date" class="form-control" id="dtNacimiento" placeholder="Fecha de nacimiento">
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" id="chkTerminos">
-                                        Acepto los <a href="#" data-toggle="modal" data-target="#terminos">Terminos y condiciones</a>
-                                    </label>
-                                </div>
-                                <div class="form-group row">
-                                    <div class=" col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Registrate</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('6', '6');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
         </div>
-
-    </div>
-    <div class="modal fade" id="terminos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="terminostitle">Terminos y Condiciones</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h2>TERMINOS Y CONDICIONES</h2>
-                    <ol>
-                        <li>
-                            <p><strong>1. Introducci&oacute;n</strong></p>
-                            <p>Las presentes condiciones generales de uso de la p&aacute;gina web, regulan los t&eacute;rminos y condiciones de acceso y uso de eyeMeet, propiedad de (indicar el nombre de la empresa o profesional propietario de el portal), con domicilio en (indicar) y con C&oacute;digo de Identificaci&oacute;n Fiscal n&uacute;mero (indicar), en adelante, &laquo;la Empresa&raquo;, que el usuario del Portal deber&aacute; de leer y aceptar para usar todos los servicios e informaci&oacute;n que se facilitan desde el portal.&nbsp;El mero acceso y/o utilizaci&oacute;n del portal, de todos o parte de sus contenidos y/o servicios significa la plena aceptaci&oacute;n de las presentes condiciones generales de uso.&nbsp;</p>
-                            <p><strong>2. Condiciones de uso</strong></p>
-                            <p>Las presentes condiciones generales de uso del portal regulan el acceso y la utilizaci&oacute;n del portal, incluyendo los contenidos y los servicios puestos a disposici&oacute;n de los usuarios en y/o a trav&eacute;s del portal, bien por el portal, bien por sus usuarios, bien por terceros. No obstante, el acceso y la utilizaci&oacute;n de ciertos contenidos y/o servicios puede encontrarse sometido a determinadas condiciones espec&iacute;ficas.</p>
-                            <p><strong>3.&nbsp;&nbsp; Modificaciones</strong></p>
-                            <p>La empresa se reserva la facultad de modificar en cualquier momento las condiciones generales de uso del portal. En todo caso, se recomienda que consulte peri&oacute;dicamente los presentes&nbsp;t&eacute;rminos de uso del portal, ya que pueden ser modificados.</p>
-                            <p><strong>4. Obligaciones del Usuario</strong></p>
-                            <p>El usuario deber&aacute; respetar en todo momento los t&eacute;rminos y condiciones establecidos en las presentes condiciones generales de uso del portal. De forma expresa el usuario manifiesta que utilizar&aacute; el portal de forma diligente y asumiendo cualquier responsabilidad que pudiera derivarse del incumplimiento de las normas.</p>
-                            <p>As&iacute; mismo, el usuario no podr&aacute; utilizar el portal para transmitir, almacenar, divulgar promover o distribuir datos o contenidos que sean portadores de virus o cualquier otro c&oacute;digo inform&aacute;tico, archivos o programas dise&ntilde;ados para interrumpir, destruir o perjudicar el funcionamiento de cualquier programa o equipo inform&aacute;tico o de telecomunicaciones.</p>
-                            <p><strong>5. Responsabilidad del portal</strong></p>
-                            <p>El usuario conoce y acepta que el portal no otorga ninguna garant&iacute;a de cualquier naturaleza, ya sea expresa o impl&iacute;cita, sobre los datos, contenidos, informaci&oacute;n y servicios que se incorporan y ofrecen desde el Portal.</p>
-                            <p>Exceptuando los casos que la Ley imponga expresamente lo contrario, y exclusivamente con la medida y extensi&oacute;n en que lo imponga, el Portal no garantiza ni asume responsabilidad alguna respecto a los posibles da&ntilde;os y perjuicios causados por el uso y utilizaci&oacute;n de la informaci&oacute;n, datos y servicios del Portal.</p>
-                            <p>En todo caso, el Portal excluye cualquier responsabilidad por los da&ntilde;os y perjuicios que puedan deberse a la informaci&oacute;n y/o servicios prestados o suministrados por terceros diferentes de la Empresa. Toda responsabilidad ser&aacute; del tercero ya sea proveedor o&nbsp;colaborador.</p>
-                            <p><strong>6. Propiedad intelectual e industrial</strong></p>
-                            <p>Todos los contenidos, marcas, logos, dibujos, documentaci&oacute;n, programas inform&aacute;ticos o cualquier otro elemento susceptible de protecci&oacute;n por la legislaci&oacute;n de propiedad intelectual o industrial, que sean accesibles en el portal corresponden exclusivamente a la empresa o a sus leg&iacute;timos titulares y quedan expresamente reservados todos los derechos sobre los mismos. Queda expresamente prohibida la creaci&oacute;n de enlaces de hipertexto (links) a cualquier elemento integrante de las p&aacute;ginas web del Portal sin la autorizaci&oacute;n de la empresa, siempre que no sean a una p&aacute;gina web del Portal que no requiera identificaci&oacute;n o autenticaci&oacute;n para su acceso, o el mismo est&eacute; restringido.</p>
-                            <p>En cualquier caso, el portal se reserva todos los derechos sobre los contenidos, informaci&oacute;n datos y servicios que ostente sobre los mismos. El portal no concede ninguna licencia o autorizaci&oacute;n de uso al usuario sobre sus contenidos, datos o servicios, distinta de la que expresamente se detalle en las presentes condiciones generales de uso del portal.</p>
-                            <p><strong>7. Legislaci&oacute;n aplicable, jurisdicci&oacute;n competente y notificaciones</strong></p>
-                            <p>Las presentes condiciones se rigen y se interpretan de acuerdo con las Leyes de Espa&ntilde;a. Para cualquier reclamaci&oacute;n ser&aacute;n competentes los juzgados y tribunales de (indicar la ciudad). Todas las notificaciones, requerimientos, peticiones y otras comunicaciones que el Usuario desee efectuar a la Empresa titular del Portal deber&aacute;n realizarse por escrito y se entender&aacute; que han sido correctamente realizadas cuando hayan sido recibidas en la siguiente direcci&oacute;n (indicar direcci&oacute;n de correo en la que se desean recibir las notificaciones).</p>
-                        </li>
-                    </ol>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('7', '7');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('8', '8');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('9', '9');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
+        </div>      
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('10', '10');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span class="ellipsis">Zoilo Reyes Rodriguez</span>
+                <span class="badge badge-pill badge-success">On</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span>Michael Perez</span>
+                <span class="badge badge-success">O</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span>Michael Perez</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span>Michael Perez</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" class="rounded-circle" src="testProfile.jpg" />
+                <span>Michael Perez</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" src="testProfile.jpg" />
+                <span>John Perez</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" src="testProfile.jpg" />
+                <span>Sasha Perez</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" src="testProfile.jpg" />
+                <span>Elpoderoso Perez</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" src="testProfile.jpg" />
+                <span>Karla Perez</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" src="testProfile.jpg" />
+                <span>Izy Perez</span>
+            </a>
+        </div>
+        <div class="sidebar-name">
+            <!-- Pass username and display name to register popup -->
+            <a href="javascript:register_popup('mperez5', 'Michael Perez');">
+                <img width="30" height="30" src="testProfile.jpg" />
+                <span>Michael Perez</span>
+            </a>
         </div>
     </div>
-    <footer class="footer">
-        <div class="container">
-            <hr />
-            <p>EyeMeet.com © 2017</p>
-        </div>
-    </footer>
+    <div class="chat-sidebar-search"></div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -363,6 +466,107 @@
                 scrollTop: $(objective).offset().top
             }, 1000);
         });
+
+       
     });
+    /*Facebook chat*/
+    Array.remove = function (array, from, to) {
+        var rest = array.slice((to || from) + 1 || array.length);
+        array.length = from < 0 ? array.length + from : from;
+        return array.push.apply(array, rest);
+    };
+
+    //this variable represents the total number of popups can be displayed according to the viewport width
+    var total_popups = 0;
+
+    //arrays of popups ids
+    var popups = [];
+
+    //this is used to close a popup
+    function close_popup(id) {
+        for (var iii = 0; iii < popups.length; iii++) {
+            if (id == popups[iii]) {
+                Array.remove(popups, iii);
+
+                document.getElementById(id).style.display = "none";
+
+                calculate_popups();
+
+                return;
+            }
+        }
+    }
+
+    //displays the popups. Displays based on the maximum number of popups that can be displayed on the current viewport width
+    function display_popups() {
+        var right = 220;
+
+        var iii = 0;
+        for (iii; iii < total_popups; iii++) {
+            if (popups[iii] != undefined) {
+                var element = document.getElementById(popups[iii]);
+                element.style.right = right + "px";
+                right = right + 320;
+                element.style.display = "block";
+            }
+        }
+
+        for (var jjj = iii; jjj < popups.length; jjj++) {
+            var element = document.getElementById(popups[jjj]);
+            element.style.display = "none";
+        }
+    }
+
+    //creates markup for a new popup. Adds the id to popups array.
+    function register_popup(id, name) {
+
+        for (var iii = 0; iii < popups.length; iii++) {
+            //already registered. Bring it to front.
+            if (id == popups[iii]) {
+                Array.remove(popups, iii);
+
+                popups.unshift(id);
+
+                calculate_popups();
+
+
+                return;
+            }
+        }
+
+        var element = '<div class="popup-box chat-popup" id="' + id + '">';
+        element = element + '<div class="popup-head">';
+        element = element + '<div class="popup-head-left">' + name + '</div>';
+        element = element + '<div class="popup-head-right"><a href="javascript:close_popup(\'' + id + '\');">&#10005;</a></div>';
+        element = element + '<div style="clear: both"></div></div><div class="popup-messages"></div></div>';
+
+        document.getElementsByTagName("body")[0].innerHTML = document.getElementsByTagName("body")[0].innerHTML + element;
+
+        popups.unshift(id);
+
+        calculate_popups();
+
+    }
+
+    //calculate the total number of popups suitable and then populate the toatal_popups variable.
+    function calculate_popups() {
+        var width = window.innerWidth;
+        if (width < 540) {
+            total_popups = 0;
+        }
+        else {
+            width = width - 200;
+            //320 is width of a single popup box
+            total_popups = parseInt(width / 320);
+        }
+
+        display_popups();
+
+    }
+
+    //recalculate when window is loaded and also when window is resized.
+    window.addEventListener("resize", calculate_popups);
+    window.addEventListener("load", calculate_popups);
+         /*Facebook chat end*/
 </script>
 </html>
