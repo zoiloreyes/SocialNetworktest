@@ -9,7 +9,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto');
         @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
-
+        .transparent {
+            background-color: rgba(0,0,0,0.15);
+        }
         .bg {
             background: url('Shark-Gif.gif') no-repeat center center;
             position: fixed;
@@ -245,12 +247,33 @@
         }
 
         input[type=search] {
-            width: 90%;
+            min-width: 210px;
             font-family: 'Roboto', sans-serif;
             border-radius: 0;
         }
         input[type=search]:focus {
             border-radius: 0;
+        }
+        .btn-send{
+            border-radius: 0;
+        }
+
+        .my-btn {
+            border-radius: 50%;
+            border: 0;
+            margin: 0;
+            padding: 10px;
+            -webkit-box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
+            -moz-box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
+            box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
+        }
+            .my-btn:hover {
+                background-color: #0088cb !important;
+            }
+        .btn .btn-block:active, .btn .btn-lg:active {
+            -webkit-box-shadow: inset 0 3px 3px -5px rgba(0,0,0,.3);
+            -moz-box-shadow: inset 0 3px 3px -5px rgba(0,0,0,.3);
+            box-shadow: inset 0 3px 3px -5px rgba(0,0,0,.3);
         }
         /*Facebook SideChat End*/
     </style>
@@ -297,6 +320,17 @@
 
         </div>
     </nav>
+    <div class="container">
+        <div class="row mt-5">
+                <div class="col col-md-2">
+                    
+                </div>
+                <div class="col col-md-4">
+
+                </div>
+            
+        </div>
+    </div>
     <div class="chat-sidebar">
         <div class="sidebar-name">
             <!-- Pass username and display name to register popup -->
@@ -450,7 +484,16 @@
             </a>
         </div>
     </div>
-    <div class="chat-sidebar-search"></div>
+    <div class="chat-sidebar-search">
+        <form class="form-inline">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Buscar..."></input>
+                
+        </form>
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -473,6 +516,15 @@
 
     }, false);
     $(document).ready(function () {
+       
+        $("body").on("mouseenter", ".my-btn", function () {
+            $(this).css("color", "white");
+            $(this).addClass("animated rubberBand");
+        });
+        $("body").on("mouseleave", ".my-btn", function () {
+            $(this).css("color", "black");
+            $(this).removeClass("animated rubberBand");
+        });
         $(".nav-link").click(function () {
             var tab = $(this).attr("href");
             $(tab).addClass('animated fadeIn')
@@ -490,8 +542,9 @@
             }, 1000);
         });
 
-       
+        
     });
+
     /*Facebook chat*/
     Array.remove = function (array, from, to) {
         var rest = array.slice((to || from) + 1 || array.length);
@@ -561,7 +614,22 @@
         element = element + '<div class="popup-head">';
         element = element + '<div class="popup-head-left">' + name + '</div>';
         element = element + '<div class="popup-head-right"><a href="javascript:close_popup(\'' + id + '\');">&#10005;</a></div>';
-        element = element + '<div style="clear: both"></div></div><div class="popup-messages"><p></p></div><div class="popup-form"><input type="search" placeholder="Mensaje..."></input><button type="button" class="btn btn-info"><i></i></button></div></div>';
+        element = element + `<div style="clear: both">
+                             </div></div>
+                            <div class="popup-messages">
+                                   <p></p>
+                            </div>
+                            <div class="popup-form">
+                                <form class="form-inline">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <button type="button" class="transparent my-btn" ><i class="fa fa-paper-plane"></i></button>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Mensaje..."></input>
+                                        
+                                </form>
+                            </div>
+                            </div>`;
 
         document.getElementsByTagName("body")[0].innerHTML = document.getElementsByTagName("body")[0].innerHTML + element;
 
